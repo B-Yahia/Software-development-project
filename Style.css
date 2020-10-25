@@ -2,6 +2,7 @@
 {
     padding: 0;
     margin: 0;
+    background-color: beige;
 }
 body{
     background-color: silver;
@@ -106,74 +107,31 @@ body{
 }
 
 /*----------------------------------the menu ----------------------------------*/
-
-.dp-mn{
-    height: 70px;
-    background: beige;
+.product-list .navbar {
     text-align: center;
-}
-.dp-mn ul {
-    display: inline-flex;
-    list-style: none;
-   
-}
-
-.dp-mn ul li{
-    width: 25vh;
-    margin: 15px;
-    padding: 15px;
-    
+    padding: 10px ;
+    margin-left: 300px;
     
 }
-
-.dp-mn ul li a{
-    text-decoration: none;
-    font-weight: bold;
-    color: salmon;
-}
-
-.dp-mn ul li:hover{
-    
-    padding-left: 6px;
-
-}
-
-.dp-mn .sub-m-1{
-    display: none;
-}
-
-.dp-mn ul li:hover .sub-m-1 {
-    display: block;
-    position: absolute;
-    background-color: salmon;
-    margin-top: auto;
-    margin-left: auto;
-    border-radius: 6px;
-}
-
-.dp-mn ul li:hover .sub-m-1  {
-    display: block;
-    margin: 10px;
-}
-
-.dp-mn ul li:hover .sub-m-1 li {
-    width: 150px;
+.product-list .navbar  ul {
+    text-align: center;
     padding: 10px;
-    border-bottom: 2px double pink;
-    background: beige;
-    text-align: left;
+    display: inline-flex;
+    
 }
-.dp-mn ul li:hover .sub-m-1 li a:hover {
-    padding-left: 10px;
+.product-list .navbar  ul li h2 a{
+    
+    color: salmon ;
+    background-color: beige;
+    
 }
+
+
+
+
+/*----------------------------------product ----------------------------------*/
 
 .card {
     padding: 5px;
-    margin: 70px 0;
-}
-
-/*----------------------------------product ----------------------------------*/
-.hd {
-    text-align: center;
-    padding: 100px 0px 0px 0px !important;
+    margin: 50px 0;
 }
