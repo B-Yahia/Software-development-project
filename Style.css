@@ -1,0 +1,179 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: silver;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+.top-nav-bar{
+    height: 70px;
+    position: sticky;
+    background: beige;
+    margin-bottom: 20px ;
+    border-bottom: 2px solid tan;
+}
+.logo{
+    height: 60px;
+    margin: 5px 10px;
+}
+.top-nav-bar .form-control{
+    margin: 10px 0px 10px 30px ;
+    border: 2px solid salmon ;
+    border-top-left-radius: 20px ;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    height: 40px;
+}
+
+.top-nav-bar .input-group-text{
+    background: beige;
+    border: 3px solid salmon;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 10px 30px 10px 0px;
+    cursor: pointer;
+    height: 40px;
+}
+.search-box{
+    display: inline-flex;
+    width: 60%;
+}
+
+.top-nav-bar .input-group-text .fa{
+    color: salmon;
+}
+
+.menu-bar{
+    width: 40%;
+    height: 60px;
+    float: right;
+}
+.menu-bar ul{
+    display: inline-flex;
+    float: right;
+}
+.menu-bar ul li{
+    background: salmon;
+    border-left: 2px solid beige;
+    border-top: 2px solid beige;
+    border-bottom: 2px solid beige;
+    list-style-type:none;
+    padding: 15px 20px;
+    cursor: pointer;
+    
+}
+.menu-bar ul li a{
+    color: beige;
+    font-weight: bold;
+    text-decoration: none;
+}
+.menu-bar ul li a:hover{
+    color: red;
+    margin-right: 20px;
+}
+
+@media only screen and ( max-width : 1000px){
+    .top-nav-bar{
+        border-bottom: 0px;
+    }
+    .search-box {
+        width: 100%;
+    }
+    .menu-bar {
+        width: 100%;
+    }
+    .menu-bar ul {
+        margin: 10px 0px;
+        width: 100%;
+    }
+    .menu-bar ul li{
+        height: 60px;
+        width: 100%;
+    }
+
+/*------------------the menu -------------------*/
+
+    .dp-mn ul{
+        width: 100%;
+        margin: auto;
+    }
+   
+
+}
+
+/*----------------------------------the menu ----------------------------------*/
+
+.dp-mn{
+    height: 70px;
+    background: beige;
+    text-align: center;
+}
+.dp-mn ul {
+    display: inline-flex;
+    list-style: none;
+   
+}
+
+.dp-mn ul li{
+    width: 25vh;
+    margin: 15px;
+    padding: 15px;
+    
+    
+}
+
+.dp-mn ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: salmon;
+}
+
+.dp-mn ul li:hover{
+    
+    padding-left: 6px;
+
+}
+
+.dp-mn .sub-m-1{
+    display: none;
+}
+
+.dp-mn ul li:hover .sub-m-1 {
+    display: block;
+    position: absolute;
+    background-color: salmon;
+    margin-top: auto;
+    margin-left: auto;
+    border-radius: 6px;
+}
+
+.dp-mn ul li:hover .sub-m-1  {
+    display: block;
+    margin: 10px;
+}
+
+.dp-mn ul li:hover .sub-m-1 li {
+    width: 150px;
+    padding: 10px;
+    border-bottom: 2px double pink;
+    background: beige;
+    text-align: left;
+}
+.dp-mn ul li:hover .sub-m-1 li a:hover {
+    padding-left: 10px;
+}
+
+.card {
+    padding: 5px;
+    margin: 70px 0;
+}
+
+/*----------------------------------product ----------------------------------*/
+.hd {
+    text-align: center;
+    padding: 100px 0px 0px 0px !important;
+}
