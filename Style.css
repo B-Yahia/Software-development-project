@@ -14,7 +14,7 @@ body{
     position: sticky;
     background: beige;
     margin-bottom: 20px ;
-    border-bottom: 2px solid tan;
+    
 }
 .logo{
     height: 60px;
@@ -129,9 +129,12 @@ body{
 
 
 
-/*----------------------------------product ----------------------------------*/
+/*----------------------------------product cards ----------------------------------*/
 
 .card {
     padding: 5px;
     margin: 50px 0;
 }
+/*----------------------------------product page ----------------------------------*/
+
+
