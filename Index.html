@@ -3,6 +3,8 @@
     <head>
         <title>Yahya shop  </title>
         <link rel="stylesheet" href="Style.css">
+        <!--Google font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Permanent+Marker&display=swap" rel="stylesheet">
         <!--Font Awesome -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
         <!-- Bootstrap CSS -->
@@ -15,234 +17,189 @@
         <header>
             <div class="top-nav-bar">
                 <div class="search-box">
-                   <img src="Images/Logo.png" class="logo">
+                   <span class="logo">Yahya shop</span>
                    <input type="text" class="form-control" >
                    <span class="input-group-text"><i class="fa fa-search"></i></span>
                 </div>
                 <div class="menu-bar">
                     <ul>
-                        <li><a href="#">Cart <i class="fas fa-shopping-cart"></i></a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">About us</a></li>
+                      <li>
+                        <div class="iconCart">
+                          <p>0</p>
+                          <i class="fa fa-shopping-cart" id="ic"></i>
+                        </div>
+                      </li>
+                      <li><a href="#">Contact us</a></li>
+                      <li><a href="#">About us</a></li>
                     </ul>
                 </div>
             </div>
         </header>
         <!-------The Menu and product------->
-        
-        <section class="product-list">
-
-              <nav id="navbar-example2" class="navbar  ">
-                <ul class="nav nav-pills">
-                  <li class="nav-item">
-                    <h2>
-                      <a class="nav-link" href="#phone" id="prodType">Phones </a>
-                    </h2>
-                  </li>
-                  <li class="nav-item">
-                    <h2>
-                      <a class="nav-link" href="#laptop">Laptops</a>
-                    </h2>
-                  </li>
-                  <li class="nav-item">
-                    <h2>
-                      <a class="nav-link" href="#headphone">Headphones</a>
-                    </h2>
-                  </li>
-                  <li class="nav-item">
-                    <h2>
-                      <a class="nav-link" href="#smartwatch"></a>
-                    </h2>
-                  </li>
-                  
+        <section class="productMenu">
+                <ul class="menuList">
+                  <li class="menuItem" ><a href="#phones" >Phones</a></li>
+                  <li class="menuItem" ><a href="#laptops" >Laptops</a></li>
+                  <li class="menuItem" ><a href="#headphones" >Headphones</a></li>
                 </ul>
-              </nav>
-              <div data-spy="scroll" >
-                <div class="container" id="phone">
-                    <div class="row">
-                        <div class="col-12 hd">
-                            <h1> <span class="badge badge-info">Phone</span></h1>
-                        </div>
-                      <div class="col-4">
-                        <div class="card" style="width: 300px;">
-                            <img src="https://picsum.photos/200/200" class="card-img-top" >
-                            <div class="card-body">
-                              <h5 class="card-title">Card title show</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success">View product</button>
-                                <button type="button" class="btn btn-primary">Add to  card</button>
-                              </div>
-                              
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="card" style="width: 300px;">
-                            <img src="https://picsum.photos/200/200" class="card-img-top" >
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              
-                              <p class="card-text">Some quick example text me baby to build on the card title and make up the bulk of the card's content.</p>
-                              <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success">View product</button>
-                                <button type="button" class="btn btn-primary">Add to  card</button>
-                              </div>
-                              
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="card" style="width: 300px;">
-                            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card Modified one</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="http://www.google.com" class="btn btn-success"> 
-                                  View product
-                                </a>
-                                <button type="button" class="btn btn-primary">Add to  card</button>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                      
-                    </div>
-                  </div>
-                <div class="container" id="laptop">
-                    <div class="row">
-                        <div class="col-12 hd">
-                            <h1> <span class="badge badge-info">Laptops</span></h1>
-                        </div>
-                      <div class="col-4">
-                        <div class="card" style="width: 300px;">
-                            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success">View product</button>
-                                <button type="button" class="btn btn-primary">Add to  card</button>
-                              </div>
-                              
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="card" style="width: 300px;">
-                            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success">View product</button>
-                                <button type="button" class="btn btn-primary">Add to  card</button>
-                              </div>
-                              
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="card" style="width: 300px;">
-                            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success">View product</button>
-                                <button type="button" class="btn btn-primary">Add to  card</button>
-                              </div>
-                              
-                            </div>
-                        </div>
-                      </div>
-                      
-                    </div>
-                </div>
-                <div class="container" id="headphone">
-                    <div class="row">
-                        <div class="col-12 hd">
-                            <h1> <span class="badge badge-info">Headphones</span></h1>
-                        </div>
-                      <div class="col-4">
-                        <div class="card" style="width: 300px;">
-                            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success">View product</button>
-                                <button type="button" class="btn btn-primary">Add to  card</button>
-                              </div>
-                              
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="card" style="width: 300px;">
-                            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success">View product</button>
-                                <button type="button" class="btn btn-primary">Add to  card</button>
-                              </div>
-                              
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-4">
-                        <div class="card" style="width: 300px;">
-                            <img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-success">View product</button>
-                                <button type="button" class="btn btn-primary">Add to  card</button>
-                              </div>
-                              
-                            </div>
-                        </div>
-                      </div>
-                      
-                    </div>
-                </div>
-                
-              </div>
         </section>
+        <!-------The products ------->
+        <div class="container">
+          <div class="row">
+            <div class="col-12 hd">
+              <h1> <span class="badge badge-info" id="phones">Phone</span></h1>
+            </div>
+            <div class="col-4 productBox">
+              <div class="card prodCard" >
+                <img src="samsung.jpg" class="card-img-top" >
+                <div class="card-body">
+                  <h5 class="prodDetails productName">Samsung</h5>
+                  <h5 class="prodDetails productPrice">100 <span>Euro</span></h5>
+                  <a href="#" class="addToCart">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 productBox">
+              <div class="card prodCard" >
+                <img src="HTC.jfif" class="card-img-top" width="25%">
+                <div class="card-body">
+                  <h5 class="prodDetails productName">HTC</h5>
+                  <h5 class="prodDetails productPrice">150 <span>Euro</span></h5>
+                  <a href="#" class="addToCart">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 productBox">
+              <div class="card prodCard" >
+                <img src="iphone.jpg" class="card-img-top" >
+                <div class="card-body">
+                  <h5 class="prodDetails productName">Iphone</h5>
+                  <h5 class="prodDetails productPrice">200 <span>Euro</span></h5>
+                  <a href="#" class="addToCart">Add to cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 hd">
+              <h1> <span class="badge badge-info" id="laptops" >Laptops</span></h1>
+            </div>
+            <div class="col-4 productBox">
+              <div class="card prodCard" >
+                <img src="HP.jpg" class="card-img-top" >
+                <div class="card-body">
+                  <h5 class="prodDetails productName">HP</h5>
+                  <h5 class="prodDetails productPrice">450 <span>Euro</span></h5>
+                  <a href="#" class="addToCart">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 productBox">
+              <div class="card prodCard" >
+                <img src="Lenovo.jpg" class="card-img-top" >
+                <div class="card-body">
+                  <h5 class="prodDetails productName">Lenovo</h5>
+                  <h5 class="prodDetails productPrice">350 <span>Euro</span></h5>
+                  <a href="#" class="addToCart">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 productBox">
+              <div class="card prodCard" >
+                <img src="Dell.jpg" class="card-img-top" >
+                <div class="card-body">
+                  <h5 class="prodDetails productName">Dell</h5>
+                  <h5 class="prodDetails productPrice">400 <span>Euro</span></h5>
+                  <a href="#" class="addToCart">Add to cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 hd">
+              <h1> <span class="badge badge-info" id="headphones">Headphones</span></h1>
+            </div>
+            <div class="col-4 productBox">
+              <div class="card prodCard" >
+                <img src="SONY.jpg" class="card-img-top" >
+                <div class="card-body">
+                  <h5 class="prodDetails productName">Sony</h5>
+                  <h5 class="prodDetails productPrice">100 <span>Euro</span></h5>
+                  <a href="#" class="addToCart">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 productBox">
+              <div class="card prodCard" >
+                <img src="JBL.jpg" class="card-img-top" >
+                <div class="card-body">
+                  <h5 class="prodDetails productName">JBL</h5>
+                  <h5 class="prodDetails productPrice">80 <span>Euro</span></h5>
+                  <a href="#" class="addToCart">Add to cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 productBox">
+              <div class="card prodCard" >
+                <img src="Philips.jpg" class="card-img-top" >
+                <div class="card-body">
+                  <h5 class="prodDetails productName">Philips</h5>
+                  <h5 class="prodDetails productPrice">110 <span>Euro</span></h5>
+                  <a href="#" class="addToCart">Add to cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-------The cart page ---------->
 
+        <div class="cartBox">
+          <div class="cart">
+               <i class="fa fa-close"></i>
+               <h1>Cart products</h1>
+               <table class="cart-content">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody class="products">  
+                </tbody>
+               </table>
+          </div>
+        </div>
         <!--Firebase-->
-        <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+          <!-- <script>
+            var firebaseConfig = {
+              apiKey: "AIzaSyAUdwPIH-YVD5IQilq6nYQkRT3z-R1Ji68",
+              authDomain: "finalproject-ca2f6.firebaseapp.com",
+              databaseURL: "https://finalproject-ca2f6.firebaseio.com",
+              projectId: "finalproject-ca2f6",
+              storageBucket: "finalproject-ca2f6.appspot.com",
+              messagingSenderId: "862539598761",
+              appId: "1:862539598761:web:4f888f9b7072c6fe1f12b8",
+              measurementId: "G-9HPWL1R83Z"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
 
-        <!-- <script>
-          var firebaseConfig = {
-            apiKey: "AIzaSyAUdwPIH-YVD5IQilq6nYQkRT3z-R1Ji68",
-            authDomain: "finalproject-ca2f6.firebaseapp.com",
-            databaseURL: "https://finalproject-ca2f6.firebaseio.com",
-            projectId: "finalproject-ca2f6",
-            storageBucket: "finalproject-ca2f6.appspot.com",
-            messagingSenderId: "862539598761",
-            appId: "1:862539598761:web:4f888f9b7072c6fe1f12b8",
-            measurementId: "G-9HPWL1R83Z"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
+            
+            
+            var database = firebase.database();
 
+
+
+    
+          </script> -->
           
-          
-          var database = firebase.database();
 
-
-
-  
-        </script> -->
-        
-
-        <!--Custom JS file-->
+          <!--Custom JS file-->
         <script src="Main.js"></script>
     </body>
 </html>

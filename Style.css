@@ -5,24 +5,32 @@
     background-color: beige;
 }
 body{
-    background-color: silver;
+    
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+    background-color: beige;
 }
 .top-nav-bar{
     height: 70px;
     position: sticky;
     background: beige;
-    margin-bottom: 20px ;
+
     
 }
 .logo{
+    font-family: 'Montserrat Subrayada';
+    color: #017bf5;
     height: 60px;
-    margin: 5px 10px;
+    margin: 10px 5px;
+    font-size: 2.2rem;
+    padding: 0 10px;
+    font-weight: bolder;
+    width: 70%;
+
 }
 .top-nav-bar .form-control{
-    margin: 10px 0px 10px 30px ;
-    border: 2px solid salmon ;
+    margin: 10px 0px 10px 10px ;
+    border: 2px solid royalblue ;
     border-top-left-radius: 20px ;
     border-bottom-left-radius: 20px ;
     border-bottom-right-radius: 0px;
@@ -32,7 +40,7 @@ body{
 
 .top-nav-bar .input-group-text{
     background: beige;
-    border: 3px solid salmon;
+    border: 3px solid royalblue;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     margin: 10px 30px 10px 0px;
@@ -45,12 +53,12 @@ body{
 }
 
 .top-nav-bar .input-group-text .fa{
-    color: salmon;
+    color: royalblue;
 }
 
 .menu-bar{
     width: 40%;
-    height: 60px;
+    height: 50px;
     float: right;
 }
 .menu-bar ul{
@@ -58,12 +66,12 @@ body{
     float: right;
 }
 .menu-bar ul li{
-    background: salmon;
+    background: royalblue;
     border-left: 2px solid beige;
     border-top: 2px solid beige;
     border-bottom: 2px solid beige;
     list-style-type:none;
-    padding: 15px 20px;
+    padding: 10px 20px;
     cursor: pointer;
     
 }
@@ -76,16 +84,42 @@ body{
     color: red;
     margin-right: 20px;
 }
+.menu-bar .iconCart{
+    position: relative;
+    font-size: 1.7rem;
+    cursor: pointer;
+    z-index: 1;
+    color: #f3f3f3;
+    background-color: royalblue;  
+    align-items: center;  
+}
+.menu-bar .iconCart p {
+    position: absolute;
+    font-size: 1rem;
+    padding: 2px;
+    top: -10px;
+    left: 25px;
+    z-index: -1;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+}
+
+.menu-bar .iconCart i{
+    background-color: royalblue;
+}
 
 @media only screen and ( max-width : 1000px){
     .top-nav-bar{
         border-bottom: 0px;
+        margin: 20px;
     }
     .search-box {
         width: 100%;
     }
     .menu-bar {
         width: 100%;
+        margin: 20px;
     }
     .menu-bar ul {
         margin: 10px 0px;
@@ -95,46 +129,168 @@ body{
         height: 60px;
         width: 100%;
     }
-
-/*------------------the menu -------------------*/
-
-    .dp-mn ul{
-        width: 100%;
-        margin: auto;
-    }
-   
-
 }
-
-/*----------------------------------the menu ----------------------------------*/
-.product-list .navbar {
-    text-align: center;
-    padding: 10px ;
-    margin-left: 300px;
+/*------------------the product menu  -------------------*/
+.productMenu .menuList{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
     
 }
-.product-list .navbar  ul {
-    text-align: center;
+.productMenu .menuList .menuItem{
+    margin: 20px auto;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    cursor: pointer;
     padding: 10px;
-    display: inline-flex;
+    border: 1px solid royalblue;
+    border-radius: 5px;
+}
+.productMenu .menuList .menuItem a{
+    text-decoration: none;
+    color: royalblue;
+
+}
+/*----------------------------------the products ----------------------------------*/
+
+.container .row{
+    width: 100%;
+    margin: 30px auto;
+}
+
+
+.container .row .productBox{
+    width: 100%;
+    margin:auto;
     
 }
-.product-list .navbar  ul li h2 a{
-    
-    color: salmon ;
-    background-color: beige;
-    
-}
 
-
-
-
-/*----------------------------------product cards ----------------------------------*/
-
-.card {
+.container .row .productBox img{
     padding: 5px;
-    margin: 50px 0;
 }
-/*----------------------------------product page ----------------------------------*/
+
+.container .row .productBox h5{
+    text-align: center;
+    justify-content: center;
+    color: grey ;
+}
+
+.container .row .productBox a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: royalblue;
+    text-decoration: none;
+    padding: 5px;
+    margin: 30px auto;
+    color: beige;
+    border: 1px solid blue;
+    border-radius: 7%;
+}
+/*----------------------------------the cartpage ----------------------------------*/
+.cartBox{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0,0, 0.8);
+    z-index: 1;
+    transition: 0.3s linear;
+    transform: scale(0);
+}
+.cartBox.active {
+    transform: scale(1);
+}
+.cartBox .cart{
+    position: relative;
+    height: 90%;
+    width: 97%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+.cartBox .cart i{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cartBox .cart h1{
+    position: relative;
+    margin-top: 15px;
+    font-size: 2.5rem;
+}
+/*           the catr table             */
+.cartBox .cart-content {
+    width:100%;
+    height: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.2rem;
+    min-width: 400px;
+}
+
+.cartBox .cart-content thead tr th{
+    background-color: #017bf5;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.cartBox .cart-content th,
+.cartBox .cart-content td {
+    padding: 6px 7px;
+
+}
+
+.cartBox .cart-content tbody tr:last-of-type{
+    border-bottom: 1px solid #017bf5;
+}
+
+.cartBox .cart-content tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
 
 
+.cartBox .cart-content tbody .inc-q,
+.cartBox .cart-content tbody .dec-q {
+    background-color: #017bf5;
+    padding: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+    font-size: 0.8rem;
+    align-content: center;
+    cursor: pointer;
+    font-weight: 500;
+    
+}
+
+.cartBox .cart-content tbody .remove{
+    background-color: #FF5733;
+    padding: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+    font-size: 0.5rem;
+    align-content: center;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.cartBox .cart-content tbody td {
+    align-content: center;
+
+}
