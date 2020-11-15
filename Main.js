@@ -242,10 +242,18 @@ function removeFromCart (item){
     console.log('1')
 }
 function increatQ (item){
-    console.log('2')
+    let cartItems = localStorage.getItem("productsInCart");
+    
+    cartItems = JSON.parse(cartItems);
+    cartItems[product.name].no += 1;
 }
 function decreaseQ (item){
-    console.log('3')
+    let cartItems = localStorage.getItem("productsInCart");
+    
+    cartItems = JSON.parse(cartItems);
+    cartItems[product.name].no -= 1;
+    
+    
 }
 function sendOrder (){
     saveOrder()
