@@ -15,6 +15,10 @@ var firebaseConfig = {
   // Get a reference to the database service
   let ref = firebase.database().ref("productType");
 
+  function writeOrder(){
+      finalOrder
+  }
+
   //on() method to get the categories fro the firebase
   /*
   ref.on('value', gotData, errData)
@@ -106,7 +110,9 @@ var firebaseConfig = {
 
     
 ]
-console.log(addToCart.length)
+
+
+
 
 for(let i=0 ; i<addToCart.length ; i++){
     addToCart[i].addEventListener('click', () =>{
@@ -141,9 +147,9 @@ function cartNumbers(product){
 
 function addItemsToCart(product){
     let cartItems = localStorage.getItem("productsInCart");
-    console.log(typeof cartItems)
+    
     cartItems = JSON.parse(cartItems);
-    console.log(typeof cartItems)
+    
     if( cartItems !== null){
         if(cartItems[product.name] == undefined){
             cartItems = {
@@ -161,6 +167,8 @@ function addItemsToCart(product){
     
     localStorage.setItem("productsInCart",JSON.stringify(cartItems))
     displayCart();
+    
+    
 }
 
 function totalCost(product){
@@ -175,10 +183,10 @@ function totalCost(product){
     
 }
 function displayCart(){
-    console.log("1")
+    
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
-    console.log(cartItems)
+    
     let prodContainer = document.querySelector('.products')
     let totalAmount = localStorage.getItem("totalprice");
     if(cartItems && prodContainer){
@@ -188,7 +196,7 @@ function displayCart(){
             <tr>
                 <td>
                 <div class="d-flex">
-                    <span class="remove">Remove</span>
+                    <span class="remove" onclick="removeFromCart('${item}')">Remove</span>
                     <h5> ${item.name}</h5>
                     </div>
                 </td>
@@ -197,9 +205,9 @@ function displayCart(){
                 </td>
                 <td>
                 <div class="d-flex">
-                    <span class="dec-q">-</span>
+                    <span class="dec-q" onclick="decreaseQ(${item.name})"><</span>
                     <h5> ${item.no}</h5>
-                    <span class="inc-q">+</span>
+                    <span class="inc-q" onclick="increatQ(${item.name})">></span>
                     </div>
                 </td>
                 <td>
@@ -218,10 +226,55 @@ function displayCart(){
                 </td>
             </tr>
             `;
+            prodContainer.innerHTML +=`
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                <button type="button" class="btn btn-warning" onclick="sendOrder()">Order now</button>
+                </td>
+            </tr>
+            `;
     }
 }
+function removeFromCart (item){
+    console.log('1')
+}
+function increatQ (item){
+    console.log('2')
+}
+function decreaseQ (item){
+    console.log('3')
+}
+function sendOrder (){
+    saveOrder()
+    //localStorage.clear();
+    //cartBox.classList.remove('active')
+    
+    
+}
 
-
+function saveOrder (){
+    let finalOrder = localStorage.getItem("productsInCart");
+    finalOrder = JSON.parse(finalOrder);
+    console.log(finalOrder)
+    console.log(typeof finalOrder)
+    let refO = firebase.database().ref().child('orders');
+    
+    refO.set({order : finalOrder}, function(error) {
+        if (error) {
+          console.log(error);
+          
+        } else {
+            
+            console.log('saved SS');
+        }
+      });
+      
+      
+    
+}
 
 
 

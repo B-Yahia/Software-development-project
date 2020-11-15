@@ -81,8 +81,7 @@ body{
     text-decoration: none;
 }
 .menu-bar ul li a:hover{
-    color: red;
-    margin-right: 20px;
+    color: black;
 }
 .menu-bar .iconCart{
     position: relative;
@@ -100,7 +99,8 @@ body{
     top: -10px;
     left: 25px;
     z-index: -1;
-    background-color: red;
+    background-color: #FF5733;
+    box-shadow: #FF5733;
     color: white;
     border-radius: 10px;
 }
@@ -187,6 +187,7 @@ body{
     color: beige;
     border: 1px solid blue;
     border-radius: 7%;
+    cursor: pointer;
 }
 /*----------------------------------the cartpage ----------------------------------*/
 .cartBox{
@@ -215,6 +216,7 @@ body{
     flex-direction: column;
     align-items: center;
     overflow: auto;
+    margin: 0 0 20px 0;
 }
 .cartBox .cart i{
     position: absolute;
@@ -234,12 +236,14 @@ body{
 }
 /*           the catr table             */
 .cartBox .cart-content {
+    position: relative;
     width:100%;
     height: 100%;
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 1.2rem;
     min-width: 400px;
+    position: relative;
 }
 
 .cartBox .cart-content thead tr th{
@@ -251,7 +255,7 @@ body{
 
 .cartBox .cart-content th,
 .cartBox .cart-content td {
-    padding: 6px 7px;
+    padding: 2px 3px;
 
 }
 
@@ -263,18 +267,18 @@ body{
     background-color: #f3f3f3;
 }
 
-
+.cartBox .cart-content tbody span,
 .cartBox .cart-content tbody .inc-q,
 .cartBox .cart-content tbody .dec-q {
     background-color: #017bf5;
-    padding: 5px;
+    padding:0 5px;
     border-radius: 50%;
     display: inline-block;
-    margin: 5px;
-    font-size: 0.8rem;
+    margin:0 5px;
+    font-size: 1rem;
     align-content: center;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 1000;
     
 }
 
