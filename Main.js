@@ -1,4 +1,4 @@
-// Your web app's Firebase configuration
+//the web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyAUdwPIH-YVD5IQilq6nYQkRT3z-R1Ji68",
   authDomain: "finalproject-ca2f6.firebaseapp.com",
@@ -11,32 +11,6 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  
-  // Get a reference to the database service
-  let ref = firebase.database().ref("productType");
-
-  function writeOrder(){
-      finalOrder
-  }
-
-  //on() method to get the categories fro the firebase
-  /*
-  ref.on('value', gotData, errData)
-
-  function gotData (data){
-    data = data.val();
-    let menuCat = Object.keys(data)
-    console.log(menuCat)
-    console.log(data[menuCat[1]].HP.Price)
-    document.getElementById('cat-1').innerHTML = menuCat[0]
-    document.getElementById('cat-2').innerHTML = menuCat[1]
-    document.getElementById('cat-3').innerHTML = menuCat[2]
-    
-  }
-
-  function errData (error){
-    console.log(error.message , error.code)
-  }*/
 
   // open the cart window
   const cartIcon = document.querySelector('.iconCart')
@@ -164,11 +138,9 @@ function addItemsToCart(product){
             [product.name]: product
         }
     }
-    
+    //totalCost(product)
     localStorage.setItem("productsInCart",JSON.stringify(cartItems))
-    displayCart();
-    
-    
+    displayCart();  
 }
 
 function totalCost(product){
@@ -180,13 +152,12 @@ function totalCost(product){
     }else{
         localStorage.setItem("totalprice", product.price)
     }
-    
+    displayCart()
 }
 function displayCart(){
     
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
-    
     let prodContainer = document.querySelector('.products')
     let totalAmount = localStorage.getItem("totalprice");
     if(cartItems && prodContainer){
@@ -196,7 +167,7 @@ function displayCart(){
             <tr>
                 <td>
                 <div class="d-flex">
-                    <span class="remove" onclick="removeFromCart('${item}')">Remove</span>
+                    <span class="remove" onclick="removeFromCart('${item.name}')">Remove</span>
                     <h5> ${item.name}</h5>
                     </div>
                 </td>
@@ -205,9 +176,9 @@ function displayCart(){
                 </td>
                 <td>
                 <div class="d-flex">
-                    <span class="dec-q" onclick="decreaseQ(${item.name})"><</span>
+                    <span class="dec-q" onclick="decreaseQ('${item.name}')"><</span>
                     <h5> ${item.no}</h5>
-                    <span class="inc-q" onclick="increatQ(${item.name})">></span>
+                    <span class="inc-q" onclick="increatQ('${item.name}')">></span>
                     </div>
                 </td>
                 <td>
@@ -239,49 +210,96 @@ function displayCart(){
     }
 }
 function removeFromCart (item){
-    console.log('1')
+    // deduce the price fro the total
+    let cartItems = localStorage.getItem("productsInCart");
+    cartItems = JSON.parse(cartItems);
+    let totalAmount = localStorage.getItem("totalprice");
+    totalAmount = parseInt(totalAmount);
+    localStorage.setItem("totalprice", totalAmount - (cartItems[item].price*cartItems[item].no) );
+    //remove the item from the view
+    
+    delete cartItems[item];
+    localStorage.setItem("productsInCart",JSON.stringify(cartItems))
+    
+    displayCart()
+    
+    
+    
+    
 }
 function increatQ (item){
+    // to increase the quantity
     let cartItems = localStorage.getItem("productsInCart");
-    
     cartItems = JSON.parse(cartItems);
-    cartItems[product.name].no += 1;
+    cartItems[item].no += 1;
+    localStorage.setItem("productsInCart",JSON.stringify(cartItems))
+    // to increase the total ammount
+    let totalAmount = localStorage.getItem("totalprice");
+    totalAmount = parseInt(totalAmount);
+    localStorage.setItem("totalprice", cartItems[item].price + totalAmount);
+    // to increase the total items in the cart
+    let productNumbers = localStorage.getItem('cartNumbers');
+    console.log(typeof productNumbers)
+    productNumbers = parseInt(productNumbers)
+    console.log(typeof productNumbers)
+    productNumbers += 1;
+    localStorage.setItem("cartNumbers",JSON.stringify(productNumbers))   
+    
+    displayCart()
 }
 function decreaseQ (item){
     let cartItems = localStorage.getItem("productsInCart");
-    
     cartItems = JSON.parse(cartItems);
-    cartItems[product.name].no -= 1;
+    if (cartItems[item].no >= 2){
+        cartItems[item].no -= 1;
+        localStorage.setItem("productsInCart",JSON.stringify(cartItems))
+        // to decrease the total ammount
+        let totalAmount = localStorage.getItem("totalprice");
+        totalAmount = parseInt(totalAmount);
+        localStorage.setItem("totalprice", totalAmount - cartItems[item].price );
+
+        // to descrease the total items in the cart
+        let productNumbers = localStorage.getItem('cartNumbers');
+        productNumbers = parseInt(productNumbers)
+        productNumbers -= 1;
+        localStorage.setItem("cartNumbers",JSON.stringify(productNumbers))
+    }else{
+        
+        removeFromCart(item)
+    }
     
     
+    displayCart()
 }
 function sendOrder (){
     saveOrder()
-    //localStorage.clear();
-    //cartBox.classList.remove('active')
+    
+    cartBox.classList.remove('active')
     
     
 }
 
 function saveOrder (){
     let finalOrder = localStorage.getItem("productsInCart");
-    finalOrder = JSON.parse(finalOrder);
+    let totalAmount = localStorage.getItem("totalprice");
+    totalAmount = parseInt(totalAmount);
+    
     console.log(finalOrder)
     console.log(typeof finalOrder)
     let refO = firebase.database().ref().child('orders');
     
-    refO.set({order : finalOrder}, function(error) {
+    refO.set({
+        order : finalOrder ,
+        sum: totalAmount
+    }, function(error) {
         if (error) {
           console.log(error);
           
         } else {
-            
-            console.log('saved SS');
+            console.log('The order is sent');
         }
       });
-      
-      
-    
+    localStorage.clear();
 }
 
 
