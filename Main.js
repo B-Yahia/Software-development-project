@@ -286,7 +286,7 @@ function saveOrder (){
     
     console.log(finalOrder)
     console.log(typeof finalOrder)
-    let refO = firebase.database().ref().child('orders');
+    let refO = firebase.database().ref().child('orders').push();
     
     refO.set({
         order : finalOrder ,
@@ -300,6 +300,7 @@ function saveOrder (){
         }
       });
     localStorage.clear();
+    location.reload()
 }
 
 
